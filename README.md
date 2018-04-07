@@ -1,336 +1,227 @@
-# whiteglass
+# Type Theme
 
-[![Gem Version](https://badge.fury.io/rb/jekyll-whiteglass.svg)](https://badge.fury.io/rb/jekyll-whiteglass)
-[![Build Status](https://travis-ci.org/yous/whiteglass.svg?branch=master)](https://travis-ci.org/yous/whiteglass)
-[![Dependency Status](https://gemnasium.com/badges/github.com/yous/whiteglass.svg)](https://gemnasium.com/github.com/yous/whiteglass)
+![Default Type Theme blog](https://user-images.githubusercontent.com/816965/30518919-d5978024-9bcd-11e7-81b3-3dd07e99a1f9.png)
 
-Minimal, responsive Jekyll theme for hackers.
+A free and open-source [Jekyll](https://jekyllrb.com) theme. Great for blogs and easy to customize.
 
-![whiteglass theme](screenshot.png)
-
-## Installation
-
-Add this line to your Jekyll site's Gemfile:
-
-``` ruby
-gem "jekyll-whiteglass"
-```
-
-And add this line to your Jekyll site's `_config.yml`:
-
-``` yaml
-theme: jekyll-whiteglass
-```
-
-And then execute:
-
-``` sh
-bundle
-```
-
-Or install it yourself as:
-
-``` sh
-gem install jekyll-whiteglass
-```
-
-## Quick Start
-
-1. Generate a new Jekyll blog:
-
-   ``` sh
-   jekyll new blog --skip-bundle
-   cd blog
-   ```
-
-2. Edit `Gemfile` to use whiteglass theme:
-
-   ``` ruby
-   gem "jekyll-whiteglass"
-   ```
-
-3. Edit `_config.yml` to use whiteglass theme and its plugins:
-
-   ``` yaml
-   theme: jekyll-whiteglass
-   plugins:
-     - jekyll-archives
-     - jekyll-paginate
-     - jekyll-sitemap
-
-   permalink: /:year/:month/:day/:title/
-   paginate_path: /posts/:num/
-   paginate: 5
-
-   jekyll-archives:
-     enabled:
-       - categories
-       - tags
-     layout: category_archives
-     permalinks:
-       category: /categories/:name/
-       tag: /tags/:name/
-   ```
-
-4. Copy
-   [`index.html`](https://github.com/yous/whiteglass/blob/master/index.html),
-   [`about.md`](https://github.com/yous/whiteglass/blob/master/about.md),
-   [`archives.md`](https://github.com/yous/whiteglass/blob/master/archives.md),
-   [`feed.xml`](https://github.com/yous/whiteglass/blob/master/feed.xml), and
-   [`_data/navigation.yml`](https://github.com/yous/whiteglass/blob/master/_data/navigation.yml)
-   from the theme:
-
-   ``` sh
-   rm index.md
-   curl -L -O "https://github.com/yous/whiteglass/raw/master/{index.html,about.md,archives.md,feed.xml}"
-   curl -L --create-dirs -o _data/navigation.yml https://github.com/yous/whiteglass/raw/master/_data/navigation.yml
-   ```
-
-5. Install gems and you're good to go! The blog will be available on
-   `http://127.0.0.1:4000`.
-
-   ``` sh
-   bundle install
-   bundle exec jekyll serve
-   ```
+[Demo](https://rohanchandra.github.io/type-theme/)
 
 ## Usage
 
-### Customization
+1. Fork and clone the [Type Theme repo](https://github.com/rohanchandra/type-theme): `git clone https://github.com/rohanchandra/type-theme`
+2. [Install Jekyll](https://jekyllrb.com/docs/installation/): `gem install jekyll`
+3. Install the theme's dependencies: `bundle install`
+4. Customize the theme (see below)
+5. Run the Jekyll server: `jekyll serve`
 
-To override the default structure and style of whiteglass, simply create the
-concerned directory at the root of your site, copy the file you wish to
-customize to that directory, and then edit the file. e.g., to override the
-[`_includes/footer_content.html`](_includes/footer_content.html) file to add
-contents to footer, create an `_includes` directory, copy
-`_includes/footer_content.html` from jekyll-whiteglass gem folder to
-`<your-site>/_includes` and start editing that file.
+## Customizing Type Theme
 
-For example, you can add favicons to `_includes/head_custom.html`:
+Open `_config.yml` in a text editor to change most of the blog's settings.
 
-``` html
-<link rel="icon" type="image/x-icon" href="{{ "/favicon.ico" | relative_url }}">
-<link rel="apple-touch-icon" href="{{ "/apple-touch-icon.png" | relative_url }}">
-<link rel="apple-touch-icon" sizes="76x76" href="{{ "/apple-touch-icon-76x76.png" | relative_url }}">
-<link rel="apple-touch-icon" sizes="120x120" href="{{ "/apple-touch-icon-120x120.png" | relative_url }}">
-<link rel="apple-touch-icon" sizes="152x152" href="{{ "/apple-touch-icon-152x152.png" | relative_url }}">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ "/apple-touch-icon-180x180.png" | relative_url }}">
+If a variable in this document is marked as "optional", disable the feature by removing all text from the variable. For example, to prevent the avatar from rendering in the header, the avatar line should read:
+
+```yml
+theme:
+  title: Type Theme
+  avatar:
+  gravatar:
 ```
 
-The site's default CSS is in the gem itself,
-[`assets/main.scss`](assets/main.scss). To override the default CSS, the file
-has to exist at your site source. Do either of the following:
+Notice the avatar variable is left intentionally blank.
 
-- Create a new instance of `main.scss` at site source
-  - Create a new file `main.scss` at `<your-site>/assets/`
-  - Add the frontmatter dashes, and
-  - Add `@import "whiteglass";`, to `<your-site>/assets/main.scss`
-  - Add your custom CSS
-- Download the file from this repo
-  - Create a new file `main.scss` at `<your-site>/assets/`
-  - Copy the contents at [`assets/main.scss`](assets/main.scss) onto the `main.scss` you just created, and edit away
-- Copy directly from jekyll-whiteglass gem
-  - Go to your local jekyll-whiteglass gem installation directory (run `bundle show jekyll-whiteglass` to get the path to it)
-  - Copy the `assets/` folder from there into the root of `<your-site>`
-  - Change whatever values you want, inside `<your-site>/assets/main.scss`
+Below is a summary of the configuration options in Type Theme.
 
-### Locale
+### Site configuration
+The most common configurations, included here for guidance, are:
 
-`site.lang` is used to declare the primary language for each web page within the
-site.
+Jekyll website *without* a subpath (such as a GitHub Pages website for a given username):
 
-`lang: en-US` sets the `lang` attribute for the site to the United States flavor
-of English, while `en-GB` would be for the United Kingdom style of English.
-Country codes are optional and the shorter variation `lang: en` is also
-acceptable. You may want to write a post in different language, then add `lang`
-attribute to the frontmatter of that post:
-
-``` yaml
-layout: post
-title: "안녕하세요"
-lang: ko
+```yml
+# SITE CONFIGURATION
+baseurl: ""
+url: "https://username.github.io"
 ```
 
-### Description
+Jekyll website *with* subpath (like the Type Theme demo page):
 
-`site.description` describes the site. This is mainly used in meta descriptions
-for improving SEO. Also, you can set `description` attribute for each post:
-
-``` yaml
-layout: post
-title: Awesome Post
-description: This is an awesome post.
+```yml
+# SITE CONFIGURATION
+baseurl: "/sub-directory"
+url: "https://username.github.io/"
 ```
 
-If you don't specify `post.description`, then `post.excerpt` will be used if it
-exist.
+Please configure this in `_config.yml` before using the theme.
 
-### External URL
+### Meta
 
-`external-url` turns the title of your post to a link. Specify a URL which you
-want to link to.
+Meta variables hold basic information about your Jekyll site which will be used throughout the site and as meta properties for search engines, browsers, and the site's RSS feed.
 
-``` yaml
-layout: post
-title: Jekyll whiteglass theme
-external-url: https://github.com/yous/whiteglass
+Change these variables in `_config.yml`:
+
+| Variable | Example | Description | Optional |
+|-------------|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------|----------|
+| title | My Jekyll Blog | Name of website | Yes |
+| avatar | assets/img/avatar.png | Path of avatar image, to be displayed in the theme's header | Yes |
+| gravatar | f9879d71855b5ff21e4963273a886bfc | [MD5 hash of your email address](https://secure.gravatar.com/site/implement/hash/) to load your Gravatar in the theme's header | Yes |
+| description | My blog posts | Short description, primarily used by search engines | Yes |
+
+### Header and footer text
+
+Change these variables in `_config.yml`:
+
+
+| Variable | Example | Description | Optional |
+|---------------------------|------------------------------|-------------------------------------------------------------------------|----------|
+| header_text | Welcome to my Jekyll blog | HTML (shown below the navigation) with a background colour for emphasis | Yes |
+| header_text_feature_image | assets/img/sample_feature_img_3.png | Background image for the header text | Yes |
+| footer_text | Copyright 2014 | HTML (shown at end of the site) with lighter text | Yes |
+
+### Icons
+
+Add your username on selected websites in the icon section of the `_config.yml` file to display the site's icon from [Font Awesome](https://fortawesome.github.io/Font-Awesome/) in the header navigation. All icon variables should be your username enclosed in quotes (e.g. "username"), except for the following variables:
+
+
+| Variable | Example | Description | Optional |
+|----------------|-------------------------------------------------|--------------------------------------------------------|----------|
+| rss | true | Takes boolean value (true/false) to show RSS feed icon | Yes |
+| email_address | type@example.com | Email address | Yes |
+| linkedin | https://www.linkedin.com/in/FirstLast | Full URL to profile on LinkedIn | Yes |
+| stack_exchange | https://stackoverflow.com/users/0000/first-last | Full URL to profile on Stack Exchange | Yes |
+
+### Scripts
+
+Change these variables in `_config.yml`:
+
+
+| Variable | Example | Description | Optional |
+|------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------|----------|
+| google_analytics | UA-123456-01 | Google Analytics [tracking ID](https://support.google.com/analytics/answer/1032385?hl=en) | Yes |
+| disqus_shortname | shortname | Disqus [shortname](https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-) | Yes |
+| katex | true | Takes boolean value (true/false) to conditionally load [KaTeX](https://khan.github.io/KaTeX/) scripts required for math typesetting | Yes |
+
+Scripts listed here are only loaded if you provide a value in the `_config.yml` file.
+
+### Localization strings
+
+Change localization string variables in `_config.yml`.
+
+English text used in the theme (such as the "continue reading" label) has been grouped  so you can quickly translate the theme or change labels to suit your needs.
+
+### Colours, typography, padding
+
+![A selection of colours set in Type Theme by modifying the CSS](https://cloud.githubusercontent.com/assets/816965/5142488/130869a6-71d7-11e4-8a38-a69ec1673436.png)
+
+
+| Variable | Example | Description | Optional |
+|--------------|----------------------------|--------------------------------------|--------------------------------------------------------------|
+| google_fonts | "Playfair+Display:400,700\ | PT+Sans:400,700,700italic,400italic" | [Google Fonts](https://www.google.com/fonts) to load for use |
+
+Navigate to the `_sass > base` directory and open `_variables.scss` to change colours, typography and padding used in the theme with CSS.
+
+Once you have loaded a Google Font in `config.yml`, you can integrate the fonts into your CSS by changing the font-family in `_variables.scss`. For example, after loading the Playfair Display and PT Sans fonts from Google:
+
+```css
+// Typography
+$font-family-main: 'PT Sans', Helvetica, Arial, sans-serif;
+$font-family-headings: 'Playfair Display', Helvetica, Arial, sans-serif;
 ```
 
-Then the title of your post would look like a link with text
-`Jekyll whiteglass theme →`. This also applies to your blog feed.
+Mozilla's [ColorPicker](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool) is a helpful tool to get your preferred colours in hexadecimal or RGBA form for use in `_variables.scss`.
 
-### Category
+## Posts and pages in Type Theme
+Please refer to the [Jekyll docs for writing posts](https://jekyllrb.com/docs/posts/). Non-standard features are documented below.
 
-Each post can have `categories` attribute. It can be a string or an array. This
-will be displayed on index, archive and each post, and provide a link to the
-archive of category.
+### Math typesetting
+Wrap math expressions with `$$` signs in your posts and make sure you have set the `katex` variable in `_config.yml` to `true` for math typesetting.
 
-``` yaml
-layout: post
-title: Awesome Post
-categories: Misc
+For inline math typesetting, type your math expression on the *same line* as your content. For example:
+
+```latex
+Type math within a sentence $$2x^2 + x + c$$ to display inline
 ```
 
-``` yaml
-layout: post
-title: Another Awesome Post
-categories:
-  - Misc
-  - Idea
+For display math typesetting, type your math expression on a *new line*. For example:
+
+```latex
+$$
+  \bar{y} = {1 \over n} \sum_{i = 1}^{n}y_i
+$$
 ```
 
-### Tag
+Type Theme makes use for [KaTeX](https://khan.github.io/KaTeX/) for typesetting.
 
-Each post can have `tags` attribute. It can be a string or an array. This will
-be displayed on index, archive and each post, and provide a link to the archive
-of tag.
+### Feature images
 
-``` yaml
-layout: post
-title: Awesome Post
-tags: food
-```
+![Posts with geometric feature images](https://cloud.githubusercontent.com/assets/816965/5142406/19726478-71d6-11e4-8111-94f788b0e44d.png)
 
-``` yaml
-layout: post
-title: Another Awesome Post
-tags:
-  - food
-  - trip
-```
+Add a feature image by specifying a path to an image in the [front matter](http://jekyllrb.com/docs/frontmatter/) in the form of `feature-img: "img/PATH_TO_IMAGE.png"`.
 
-### Feed
+For example:
 
-Create `<your-site>/feed.xml` with:
-
-``` yaml
+```yml
 ---
-layout: feed
+layout: post
+title: Hello World
+feature-img: "assets/img/sample_feature_img.png"
 ---
 ```
 
-If you want to use another path for feed, you can specify a non-default path via
-your site's config.
+### Hiding pages from navigation
 
-``` yaml
-feed:
-  path: atom.xml
+In the Front Matter of a page, add `hide: true` to prevent the page from showing up in the header's navigation bar (visitors can still visit the URL through other means).
+
+For example:
+
+```yml
+---
+layout: page
+title: "Error 404: Page not found"
+permalink: /404.html
+hide: true
+---
 ```
 
-Then create `<your-site>/atom.xml` with the same content of `feed.xml` above.
+### Tags
 
-### Comments
+Post tags should be placed between `[]` in your post metadata. Seperate each tag with a comma.
 
-whiteglass provides the ability to include your favourite commenting service, like [Disqus](https://disqus.com) or [Isso](https://posativ.org/isso).
+For example:
 
-To enable comments on pages and posts:
-1. Overwrite the `_includes/custom_comments_provider.html` with your custom provider of comments.
-2. Add `comments: true` to your `_config.yml`.
-
-To disable comments on certain pages or posts specify `comments: false` in the front matter of the page or post.
-
-### Metadata for SEO
-
-#### Keywords
-
-Each post can have `keywords` attribute. This is a comma-separated list which is
-used in meta descriptions for improving SEO.
-
-``` yaml
+```yml
+---
 layout: post
-title: How to configure jekyll-whiteglass
-keywords: jekyll, whiteglass, github pages
+title: Markdown and HTML
+tags: [sample, markdown, html]
+---
 ```
 
-YAML list is also available:
+A tags listing will be automatically generated using the `tags.html` file provided in Type theme. If you're not using the tags feature it is safe to delete `tags.html`.
 
-``` yaml
-keywords:
-  - jekyll
-  - whiteglass
-  - github pages
+### Search
+
+The search feature can be activated in the `_config.yml` file by changing its value from `false` to `true`.
+
+```yml
+  #Scripts
+  search: true
 ```
 
-#### Twitter
+Once activated, the search bar will appear in the header. This feature uses [Lunr](https://lunrjs.com/) and searches through the title, tags and content of your posts.
 
-- `site.twitter_username` sets `twitter:site` and `twitter:creator` meta tag
-- `site.twitter_image` sets `twitter:image:src` meta tag
-- `page.twitter_card.type` sets `twitter:card` meta tag (default: `summary`)
-  - If `page.twitter_card.type` is `gallery`, it sets `twitter:image0`, `twitter:image1`, `twitter:image2` and `twitter:image3` meta tags with `page.twitter_card.image`, `page.twitter_card.image1`, `page.twitter_card.image2` and `page.twitter_card.image3`, respectively
-  - If `page.twitter_card.type` is `photo`, `page.twitter_card.width` sets `twitter:image:width` meta tag and `page.twitter_card.height` sets `twitter:image:height` meta tag
-- `page.twitter_card.creator` sets `twitter:creator` meta tag. It overrides `site.twitter_username`
-- `page.twitter_card.image` sets `twitter:image:src` meta tag if `page.twitter_card.type` is not `gallery`. It overrides `site.twitter_image`
+### Subtitles
+A subtitle can be displayed below your title on permalink post pages.
 
-#### Facebook
+To enable this feature, add `subtitle` to your post metadata.
 
-- `site.facebook_app_id` sets `fb:admins` meta tag
-- `site.facebook_page` sets `article:author` meta tag
-- `site.facebook_image` sets `og:image` meta tag
-- `page.facebook.image` sets `og:image` meta tag. It overrides `site.facebook_image`
+For example:
 
-### Navigation
-
-To define header links, add titles and URLs under the `main` key in
-`_data/navigation.yml`:
-
-``` yaml
-main:
-  - title: "About"
-    url: /about/
-  - title: "Archives"
-    url: /archives/
-  - title: "GitHub"
-    url: https://github.com/yous/whiteglass
+```yml
+---
+layout: post
+title: "This is a title"
+subtitle: "This is a subtitle"
+---
 ```
-
-### Enabling Google Analytics
-
-To enable Google Analytics, add the following lines to your Jekyll site:
-
-``` yaml
-google_analytics: UA-NNNNNNNN-N
-```
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at
-<https://github.com/yous/whiteglass>. This project is intended to be a safe,
-welcoming space for collaboration, and contributors are expected to adhere to
-the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is setup just like a normal Jekyll site! To test your theme, run
-`bundle exec jekyll serve` and open your browser at
-`http://localhost:4000/whiteglass/`. This starts a Jekyll server using your
-theme. Add pages, documents, data, etc. like normal to test your theme's
-contents. As you make modifications to your theme and to your content, your site
-will regenerate and you should see the changes in the browser after a refresh,
-just like normal.
 
 ## License
-
-The theme is available as open source under the terms of the
-[MIT License](http://opensource.org/licenses/MIT).
+[The MIT License (MIT)](https://github.com/rohanchandra/type-theme/blob/master/LICENSE)

@@ -1,74 +1,82 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# SITE CONFIGURATION
+baseurl: ""
+url: "https://amanps.github.io/"
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.author }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Amanpreet Singh
-author: Amanpreet Singh
-description: Blog and website for Amanpreet Singh.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://amanps.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-lang: en
-timezone: UTC
+# THEME-SPECIFIC CONFIGURATION
+theme_settings:
+  # Meta
+  title: Amanpreet Singh
+  avatar: assets/img/avatar.png
+  favicon:
+  gravatar: # Email MD5 hash
+  description: "Amanpreet Singh's website and blog about Software Engineering." # used by search engines
+
+  # Header and footer text
+  header_text:
+  header_text_feature_image:
+  footer_text: >
+   Copyright &copy; 2018 Amanpreet Singh &#8226; Powered by the <a href="https://github.com/rohanchandra/type-theme" target="_blank">Type Theme</a>
+
+  # Icons
+  rss: false
+  email_address: "hi@amanps.com"
+  behance:
+  bitbucket:
+  dribbble:
+  facebook:
+  flickr:
+  gitlab:
+  github: "amanps"
+  google_plus:
+  instagram:
+  linkedin:  "https://www.linkedin.com/in/amanps/"
+  pinterest:
+  reddit:
+  soundcloud:
+  stack_exchange:  # Full URL
+  steam:
+  tumblr:
+  twitter: "multivitaman"
+  wordpress:
+  youtube:
+
+  # Scripts
+  google_analytics: # Tracking ID, e.g. "UA-000000-01"
+  disqus_shortname:
+  katex: true # Enable if using math markup
+  search: false # Enable the search feature
+
+  # Localization strings
+  str_follow_on: "Follow on"
+  str_rss_follow: "Follow RSS feed"
+  str_email: "Email"
+  str_next_post: "Next post"
+  str_previous_post: "Previous post"
+  str_next_page: "Next"
+  str_previous_page: "Prev"
+  str_continue_reading: "Continue reading"
+  str_javascript_required_disqus: "Please enable JavaScript to view comments."
+  str_search_no_results: "No results found."
+
+  # Colours, typography and padding
+  # Open the "_sass > base" folder, and open "_variables.scss"
+  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
+
+  # Post navigation
+  post_navigation: false
+
+# PAGINATION
+paginate: 5
+paginate_path: "blog/page:num"
+
+# BUILD SETTINGS
+markdown: kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: :compressed
+plugins: [jekyll-paginate]
+theme: jekyll-theme-type
 exclude:
   - Gemfile
   - Gemfile.lock
-  - Rakefile
-  - README.md
-  - LICENSE.txt
-  - CHANGELOG.md
-  - jekyll-whiteglass.gemspec
-  - screenshot.png
-  - vendor
-
-# Social media
-twitter_username:
-twitter_image:
-facebook_app_id:
-facebook_image:
-google_analytics:
-comments: false
-
-# Plugins
-plugins:
-  - jekyll-archives
-  - jekyll-paginate
-  - jekyll-sitemap
-
-# Build settings
-markdown: kramdown
-excerpt_separator: "<READON>"
-
-# Outputting
-permalink: /:year/:month/:day/:title/
-paginate_path: /posts/:num/
-paginate: 5
-
-# Markdown settings
-kramdown:
-  auto_ids: false
-  enable_coderay: false
-  entity_output: as_char
-  footnote_nr: 1
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  toc_levels: 1..6
-
-# jekyll-archives
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layout: category_archives
-  permalinks:
-    category: /categories/:name/
-    tag: /tags/:name/

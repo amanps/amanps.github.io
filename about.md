@@ -1,6 +1,6 @@
 ---
-layout: page
-title: "Hi!"
+layout: about
+title: 
 permalink: /about/
 ---
 My name is Amanpreet Singh. People call me Aman.
