@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Exploring MVP
-description: Exploring the MVP architecture for Android
-excerpt: Experiencing the Model View Presenter architecture.
+title: Discovering MVP
+description: Discovering the MVP architecture for Android
+excerpt: Discovering the Model View Presenter architecture.
 permalink: /blog/exploring-mvp/
 ---
 I'm learning it the hard way. Android apps can become really complex, really fast when scaled. This not only means 1000s of lines of convoluted code in a single Activity, it also means a reduction in app performance. Transitioning from building toy apps to more complex ones, I found myself looking up best practices in architecting application code. That's when I came across the MVP architecture and a pretty solid implementation in this [repo](https://github.com/ribot/android-boilerplate){:target="_blank"}. Here are some of my notes.
