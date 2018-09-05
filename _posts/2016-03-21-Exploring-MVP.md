@@ -12,10 +12,10 @@ This architecture like most others focuses on maximizing [separation of concerns
 
 **Key fundamental:** The Model provides data classes to the View. The View displays content to the user and accepts user interactions which are relayed to the Presenter. The Presenter hosts business logic which does the heavy lifting of performing actions for the user. Very intuitive.
 
-For example, if the app fetches a list of users from an API, the Model would define the `User` data class, the View would simply accept a list of users and display them in a `RecyclerView` (say) and the Presenter would perform the actual network access, JSON parsing etc. The Presenter has no idea how the View displays information or what the UI looks like. It just fetches data, processes it and passes it on to the View. The View has no idea where the data came from or how it was processed. Separation of concerns.
+For example, if the app fetches a list of users from an API, the Model would define the `User` data class, the View would simply accept a list of users and display them in a `RecyclerView` (say) and the Presenter (or a relevant Manager class) would perform the actual network access, JSON parsing etc. The Presenter has no idea how the View displays information or what the UI looks like. It just fetches data, processes it and passes it on to the View. The View has no idea how the data was obtained or how it was processed, it just knows how to display it. Separation of concerns.
 
 ### Implementation
-A beautiful use of Java interfaces is at the heart of this implementation. All View components (Activity, Fragment etc.) implement an interface that defines their functionality. For example the `MainActivity` here displays a list of users, an empty state or an error state. Similarly, Presenters also implement an interface that defines their functionality.
+A beautiful usage of Java interfaces is at the heart of this implementation. All View components (Activity, Fragment etc.) implement an interface that defines their functionality. For example the `MainActivity` here displays a list of users, an empty state or an error state. Similarly, Presenters also implement an interface that defines their functionality.
 
 {% highlight java %}
 public interface MainMvpView extends MvpView {
@@ -35,4 +35,4 @@ What I think is most beautiful about this is the decoupling of components. This 
 
 Notably, all Presenters hold a reference to their Views, which are very volatile in Android apps. Even though the View is detached in `onDestroy()`, the system may choose to kill the app without calling `onDestroy()`. Which can mean only one thing, memory leaks. Some implementations use `WeakReference` as a solution but it seemed like a bandaid to me.
 
-Discovering MVP and implementing it has been a solid experience. I didn't realize there were these many different architectural patterns out there. I suppose I picked MVP because it's popular and felt familiar to the MVC pattern I had learnt in school. It'd certainly be rewarding to explore other architectural patterns, especially MVVM whose reactive nature really interests me. But for now, I'm going to continue enjoying how 'poetic' my code feels and upgrade all my projects to conform to this awesome architecture.
+Discovering MVP and implementing it has been a solid experience. Among all the different architectural patterns out there, I suppose I picked MVP because it's popular and felt familiar to the MVC pattern I had learnt in school. It'd certainly be rewarding to explore other architectural patterns, especially MVVM whose reactive nature really interests me. But for now, I'm going to continue enjoying this modularity and upgrade all my projects to conform to this awesome architecture.
