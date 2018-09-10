@@ -3,7 +3,7 @@ layout: post
 title: Discovering MVP
 description: Discovering the MVP architecture for Android
 excerpt: Discovering the Model View Presenter architecture.
-permalink: /blog/exploring-mvp/
+permalink: /blog/discovering-mvp/
 ---
 Now that I'm transitioning from building toy apps to more complex ones, I found myself looking up best practices in architecting application code. That's when I came across the MVP architecture and a pretty solid implementation in this [repo](https://github.com/ribot/android-boilerplate){:target="_blank"}. Here are some of my notes.
 
