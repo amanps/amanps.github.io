@@ -163,3 +163,5 @@ class HorizontalRecyclerAdapter(var sectionData: SectionModel) : RecyclerView.Ad
 {% endhighlight %}
 
 And that's that! A `RecyclerView` example that supports different viewTypes and nested, horizontally scrolling `RecyclerView`s inside it. Some basic UI code has been left out of the tutorial but the entire implementation can be found on my [Github](https://github.com/amanps/NestedHorizontalRecyclerView){:target="_blank"} if you'd like to work directly with it.
+
+NOTE: This implementation has been recently migrated to Kotlin.
