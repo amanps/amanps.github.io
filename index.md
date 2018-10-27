@@ -7,4 +7,4 @@ I'm a software developer who enjoys building mobile applications that deliver de
 
 I'm currently a graduate student at the Ohio State University, pursuing a Master's in Computer Science where I'm exploring my interests in Artificial Intelligence and Data Science.
 
-Feel free to check out my work [here]({{ site.url }}{{ site.baseurl }}/work). I sometimes write about code (mostly as a reference for my future self) in my [blog]({{ site.url }}{{ site.baseurl }}/blog). Feel free to <a href="mailto:{{ site.theme_settings.email_address }}" target="_blank">email me</a> to get in touch.
+Feel free to check out my work [here]({{ site.url }}{{ site.baseurl }}/work). I sometimes write about code (mostly as a reference for my future self) in my [blog]({{ site.url }}{{ site.baseurl }}/blog). Get in touch with me via <a href="mailto:{{ site.theme_settings.email_address }}" target="_blank">email</a> or @ me on <a href="https://twitter.com/{{ site.theme_settings.twitter }}" target="_blank">Twitter</a>.
