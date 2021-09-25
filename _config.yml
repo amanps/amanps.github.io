@@ -5,21 +5,21 @@ url: "https://amanps.github.io/"
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Amanpreet Singh
+  title: Aman Singh
   avatar: assets/img/avatar.png
   favicon:
   gravatar: # Email MD5 hash
-  description: "Amanpreet Singh's website and blog about Software Engineering." # used by search engines
+  description: "Aman Singh's website and blog." # used by search engines
 
   # Header and footer text
   header_text:
   header_text_feature_image:
   footer_text: >
-   Copyright &copy; 2018 Amanpreet Singh &#8226; Powered by the <a href="https://github.com/rohanchandra/type-theme" target="_blank">Type Theme</a>
+   Copyright &copy; 2018 Amanp Singh &#8226; Powered by the <a href="https://github.com/rohanchandra/type-theme" target="_blank">Type Theme</a>
 
   # Icons
   rss: false
-  email_address: "amanpreetsingh@amanps.com"
+  email_address: "aman@amans.co"
   behance:
   bitbucket:
   dribbble:
