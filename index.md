@@ -1,8 +1,6 @@
 ---
 layout: about
 ---
-I'm Amanpreet Singh. People call me Aman.
-
 I’m a software developer who enjoys building products that deliver delightful experiences. I published my first project as an Android app in 2015 and have since worked on several products both independently and professionally. Aside from programming, I enjoy thinking about user experience and interface design, something I like to incorporate in anything I build.
 
 I'm currently a graduate student at The Ohio State University, pursuing a Master's in Computer Science with a focus in Machine Learning.
