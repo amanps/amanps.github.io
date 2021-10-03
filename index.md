@@ -2,7 +2,7 @@
 layout: about
 ---
 
-I’m Aman, a software engineer based in Seattle. I find great joy in building products that solve interesting problems and delight people.
+I’m Aman, a software engineer based in Seattle. I find great joy in building products that solve important problems effectively, and delightfully.
 
 I’m currently at [Stripe](https://stripe.com/), working on [Radar](https://stripe.com/radar) — a product at the intersection of machine learning, product design and software architecture, built to protect businesses from sketchy fraudsters. 
 
