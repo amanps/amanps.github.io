@@ -1,8 +1,9 @@
 ---
 layout: about
 ---
-I’m a software developer who enjoys building products that deliver delightful experiences. I published my first project as an Android app in 2015 and have since worked on several products both independently and professionally. Aside from programming, I enjoy thinking about user experience and interface design, something I like to incorporate in anything I build.
 
-I'm currently a graduate student at The Ohio State University, pursuing a Master's in Computer Science with a focus in Machine Learning.
+I’m Aman, a software engineer based in Seattle. I find great joy in building products that solve interesting problems and delight people.
 
-Feel free to check out my work [here]({{ site.url }}{{ site.baseurl }}/work). I sometimes write about code (mostly as a reference for my future self) in my [blog]({{ site.url }}{{ site.baseurl }}/blog). Get in touch with me via <a href="mailto:{{ site.theme_settings.email_address }}" target="_blank">email</a> or @ me on <a href="https://twitter.com/{{ site.theme_settings.twitter }}" target="_blank">Twitter</a>.
+I’m currently at [Stripe](https://stripe.com/), working on [Radar](https://stripe.com/radar) — a product at the intersection of machine learning, product design and software architecture — that protects businesses from sketchy fraudsters. 
+
+Feel free to get in touch via <a href="mailto:{{ site.theme_settings.email_address }}?subject=Hello!" target="_blank">email</a> or @ me on <a href="https://twitter.com/{{ site.theme_settings.twitter }}" target="_blank">Twitter</a>!
