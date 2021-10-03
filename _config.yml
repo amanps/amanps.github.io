@@ -15,11 +15,11 @@ theme_settings:
   header_text:
   header_text_feature_image:
   footer_text: >
-   Copyright &copy; 2018 Amanp Singh &#8226; Powered by the <a href="https://github.com/rohanchandra/type-theme" target="_blank">Type Theme</a>
+   Copyright &copy; 2021 Aman Singh &#8226; Powered by the <a href="https://github.com/rohanchandra/type-theme" target="_blank">Type Theme</a>
 
   # Icons
   rss: false
-  email_address: "aman@amans.co"
+  email_address: "hello@amans.co"
   behance:
   bitbucket:
   dribbble:
