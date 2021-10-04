@@ -55,3 +55,9 @@ header {
     @extend %padding-regular;
   }
 }
+.exposure-post {
+  padding: 0%;
+  .post-content {
+    padding:0%;
+  }
+}
