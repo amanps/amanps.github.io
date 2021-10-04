@@ -14,6 +14,15 @@
     padding: $padding-small;
   }
 }
+%padding-none {
+  padding: 0% 0%;
+  @media (max-width: 1000px) {
+    padding: $padding-small * 1.5 $padding-large / 1.6;
+  }
+  @media (max-width: 576px) {
+    padding: $padding-small;
+  }
+}
 // Buttons
 .button {
   border-radius: 0.3em;
